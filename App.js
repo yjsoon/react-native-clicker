@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
+import CounterText from "./components/CounterText";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -23,9 +24,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 80, fontWeight: "bold" }}>{count}</Text>
+      <CounterText></CounterText>
+
+      <Text style={{ fontSize: 80, color: "navy", fontWeight: "bold" }}>
+        {count}
+      </Text>
 
       {
+        // How it used to look
         //<Button onPress={increment} title="Press me"></Button>
       }
 
