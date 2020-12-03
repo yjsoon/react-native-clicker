@@ -9,11 +9,17 @@ export default function App() {
     setCount(count + 1);
   }
 
+  function renderEncouragingText() {
+    if (count >= 10) {
+      return "Keep going!";
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <Text>{count}</Text>
+      <Text style={{ fontSize: 80, fontWeight: "bold" }}>{count}</Text>
       <Button title="Press me!" onPress={increment}></Button>
-      <Text style={styles.encouragingText}>Keep going!</Text>
+      <Text style={styles.encouragingText}>{renderEncouragingText()}</Text>
       <StatusBar style="auto" />
     </View>
   );
