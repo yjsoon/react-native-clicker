@@ -24,11 +24,18 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CounterText></CounterText>
-
-      <Text style={{ fontSize: 80, color: "navy", fontWeight: "bold" }}>
+      <CounterText fontSize={20} marginBottom={30} color="grey">
         {count}
-      </Text>
+      </CounterText>
+      <CounterText fontSize={40} marginBottom={20} color="lightblue">
+        {count}
+      </CounterText>
+      <CounterText fontSize={60} marginBottom={20} color="blue">
+        {count}
+      </CounterText>
+      <CounterText fontSize={80} color="navy">
+        {count}
+      </CounterText>
 
       {
         // How it used to look
