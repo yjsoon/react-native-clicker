@@ -1,9 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 
 export default function App() {
   const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
 
   function renderEncouragingText() {
     if (count >= 30) {
@@ -20,8 +24,16 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 80, fontWeight: "bold" }}>{count}</Text>
-      <Button title="Press me!" onPress={() => setCount(count + 1)}></Button>
+
+      {
+        //<Button onPress={increment} title="Press me"></Button>
+      }
+
+      <TouchableOpacity style={styles.button} onPress={increment}>
+        <Text style={styles.buttonText}>Press me!</Text>
+      </TouchableOpacity>
       <Text style={styles.encouragingText}>{renderEncouragingText()}</Text>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -38,5 +50,16 @@ const styles = StyleSheet.create({
     marginTop: 50,
     color: "#888",
     fontSize: 16,
+  },
+  button: {
+    backgroundColor: "red",
+    padding: 20,
+    borderRadius: 20,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 30,
   },
 });
